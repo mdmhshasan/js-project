@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>headers js</title>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+			}
+			section{
+				padding: 0;
+				width: 100%;
+			}
+			header{
+				width: 100%;
+				background: orange;
+				padding: 10px 0;
+				box-shadow: 2px 2px 5px #bbb;
+				transition: .5s ease-in-out;
+			}
+			header.sticky{
+				position: fixed;
+				transition: .5s ease-in-out;
+				padding: 10px 0px;
+				background: rgba(0,0,0,.09);
+				backdrop-filter: blur(20px);
+			}
+			header.sticky li a{
+				color: #fff;
+			}
+			ul li{
+				display: inline-block;
+				list-style: none;
+			}
+			ul li a{
+				text-decoration: none;
+				padding: 5px;
+				text-transform: capitalize;
+				font-size: 20px;
+			}
+			.banner{
+				background: url('img/shoe1.jpg');
+				width: 100%;
+				height: 100vh;
+			}
+			.about{
+				width: 100%;
+				padding: 20px 0;
+			}
+			h1{
+				text-transform: capitalize;
+				padding: 20px 0;
+				text-align: center;
+			}
+			.box{
+			width:100%;
+			text-align: center;
+			background: black;
+			color: #fff;
+			padding: 30px 0;
+			box-shadow: 5px 5px 5px #bbb;
+			transform: scale(0);
+			transition: .5s ease-in-out;
+			}
+			.box.add{
+				transform: translateY(-50px);
+				transition: .5s ease-in-out;
+				transform: scale(1);
+				filter: hue-rotate(200deg);
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<header>
+				<ul>
+					<li><a href="#">homes</a></li>
+					<li><a href="#">homes</a></li>
+					<li><a href="#">homes</a></li>
+					<li><a href="#">homes</a></li>
+					<li><a href="#">homes</a></li>
+				</ul>
+			</header>
+			<section class="banner">
+				
+			</section>
+			<div class="about">
+				<div class="box">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores rerum nulla libero voluptatibus culpa, cumque quod, ab mollitia ea reiciendis numquam debitis aliquid neque labore explicabo itaque sequi perferendis consequuntur? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, aspernatur adipisci at velit provident esse, tempora debitis quam? Nihil quisquam odit, officia nam dolores sequi repudiandae in recusandae, quo perferendis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur accusamus neque corrupti reiciendis obcaecati! Sit, cumque error, eveniet facere, sunt minima, repudiandae facilis aliquid blanditiis ipsum molestias? Voluptas, pariatur, quidem.</p>
+				</div>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores rerum nulla libero voluptatibus culpa, cumque quod, ab mollitia ea reiciendis numquam debitis aliquid neque labore explicabo itaque sequi perferendis consequuntur? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, aspernatur adipisci at velit provident esse, tempora debitis quam? Nihil quisquam odit, officia nam dolores sequi repudiandae in recusandae, quo perferendis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur accusamus neque corrupti reiciendis obcaecati! Sit, cumque error, eveniet facere, sunt minima, repudiandae facilis aliquid blanditiis ipsum molestias? Voluptas, pariatur, quidem.</p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores rerum nulla libero voluptatibus culpa, cumque quod, ab mollitia ea reiciendis numquam debitis aliquid neque labore explicabo itaque sequi perferendis consequuntur? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, aspernatur adipisci at velit provident esse, tempora debitis quam? Nihil quisquam odit, officia nam dolores sequi repudiandae in recusandae, quo perferendis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur accusamus neque corrupti reiciendis obcaecati! Sit, cumque error, eveniet facere, sunt minima, repudiandae facilis aliquid blanditiis ipsum molestias? Voluptas, pariatur, quidem.</p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores rerum nulla libero voluptatibus culpa, cumque quod, ab mollitia ea reiciendis numquam debitis aliquid neque labore explicabo itaque sequi perferendis consequuntur? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, aspernatur adipisci at velit provident esse, tempora debitis quam? Nihil quisquam odit, officia nam dolores sequi repudiandae in recusandae, quo perferendis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur accusamus neque corrupti reiciendis obcaecati! Sit, cumque error, eveniet facere, sunt minima, repudiandae facilis aliquid blanditiis ipsum molestias? Voluptas, pariatur, quidem.</p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores rerum nulla libero voluptatibus culpa, cumque quod, ab mollitia ea reiciendis numquam debitis aliquid neque labore explicabo itaque sequi perferendis consequuntur? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, aspernatur adipisci at velit provident esse, tempora debitis quam? Nihil quisquam odit, officia nam dolores sequi repudiandae in recusandae, quo perferendis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur accusamus neque corrupti reiciendis obcaecati! Sit, cumque error, eveniet facere, sunt minima, repudiandae facilis aliquid blanditiis ipsum molestias? Voluptas, pariatur, quidem.</p>
+			</div>
+		</section>
+		<script type="text/javascript">
+			var header=document.querySelector("header");
+			var box=document.querySelector(".box");
+			window.addEventListener("scroll",()=>{
+				box.classList.toggle("add",window.scrollY>300);
+				header.classList.toggle("sticky",window.scrollY>0);
+			})
+		</script>
+	</body>
+</html>

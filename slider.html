@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>javascript slider</title>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				overflow: hidden;
+			}
+			section{
+				width: 100%;
+			}
+			.slider{
+				width: 400px;
+				background: red;
+			}
+			.slider .item{
+				width: 100%;
+				height: 100vh;
+				overflow: hidden;
+				border-radius: 5px;
+				position: absolute;
+				opacity: 0;
+				transform: translateX(200px);
+				transition-delay: .6s;
+			}
+			.item img{
+				width: 100%;
+				height: 100%;
+			}
+			.item.active{
+				transition: .5s;
+				opacity: 1;
+				transform: translateX(0);
+				animation-delay: 1s;
+			}
+			.btn_box{
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				vertical-align: middle;
+				height: 90vh;
+			}
+			section span{
+				border: none;
+				padding: 5px;
+				font-size: 16px;
+				font-weight: 300;
+				background: rgba(255,255,255,.2);
+		        backdrop-filter: blur(90px);
+				border-radius: 30px;
+				z-index: 1;
+				position: relative;
+				top: 20px;
+				justify-content: center;
+		        align-items: center;
+		       display: ;display: flex;
+			}
+			span ion-icon{
+				font-size: 30px;
+				color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			
+			<div class="slider">
+				<div class="item active"><img src="img/shoe4.jpg" alt=""></div>
+				<div class="item"><img src="img/headphone4.jpg" alt=""></div>
+				<div class="item"><img src="img/mobile1.jpg" alt=""></div>
+				<div class="item"><img src="img/watch1.jpg" alt=""></div>
+				<div class="item"><img src="img/shoe1.jpg" alt=""></div>
+				<div class="item"><img src="img/shoe2.jpg" alt=""></div>
+			</div>
+			<div class="btn_box">
+				<span><ion-icon name="arrow-back-circle"></ion-icon></span>
+				<span class="btn"><ion-icon name="arrow-forward-circle"></ion-icon></span>
+			</div>
+		</section>
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+		<script type="text/javascript">
+			var btn=document.querySelector(".btn");
+		setInterval(()=>{
+					if(document.getElementsByClassName("item")[0].classList.contains("active")){
+								document.getElementsByClassName("item")[1].classList.add("active");
+								document.getElementsByClassName("item")[0].classList.remove("active");
+					}else if(document.getElementsByClassName("item")[1].classList.contains("active")){
+								document.getElementsByClassName("item")[2].classList.add("active");
+								document.getElementsByClassName("item")[1].classList.remove("active");
+					}else if(document.getElementsByClassName("item")[2].classList.contains("active")){
+								document.getElementsByClassName("item")[3].classList.add("active");
+								document.getElementsByClassName("item")[2].classList.remove("active");
+					}else if(document.getElementsByClassName("item")[3].classList.contains("active")){
+								document.getElementsByClassName("item")[4].classList.add("active");
+								document.getElementsByClassName("item")[3].classList.remove("active");
+					}else if(document.getElementsByClassName("item")[4].classList.contains("active")){
+								document.getElementsByClassName("item")[5].classList.add("active");
+								document.getElementsByClassName("item")[4].classList.remove("active");
+					}else if(document.getElementsByClassName("item")[5].classList.contains("active")){
+								document.getElementsByClassName("item")[0].classList.add("active");
+								document.getElementsByClassName("item")[5].classList.remove("active");
+					}
+			
+		},2000)
+			btn.addEventListener("click",()=>{
+				if(document.getElementsByClassName("item")[0].classList.contains("active")){
+				document.getElementsByClassName("item")[1].classList.add("active");
+				document.getElementsByClassName("item")[0].classList.remove("active");
+			}else if(document.getElementsByClassName("item")[1].classList.contains("active")){
+				document.getElementsByClassName("item")[2].classList.add("active");
+				document.getElementsByClassName("item")[1].classList.remove("active");
+			}else if(document.getElementsByClassName("item")[2].classList.contains("active")){
+				document.getElementsByClassName("item")[3].classList.add("active");
+				document.getElementsByClassName("item")[2].classList.remove("active");
+			}else if(document.getElementsByClassName("item")[3].classList.contains("active")){
+				document.getElementsByClassName("item")[4].classList.add("active");
+				document.getElementsByClassName("item")[3].classList.remove("active");
+			}else if(document.getElementsByClassName("item")[4].classList.contains("active")){
+				document.getElementsByClassName("item")[5].classList.add("active");
+				document.getElementsByClassName("item")[4].classList.remove("active");
+			}else if(document.getElementsByClassName("item")[5].classList.contains("active")){
+				document.getElementsByClassName("item")[0].classList.add("active");
+				document.getElementsByClassName("item")[5].classList.remove("active");
+			}
+			})
+		
+		</script>
+	</body>
+</html>

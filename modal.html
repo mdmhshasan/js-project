@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Modal js</title>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+				background: #bbb;
+				height: 100vh;
+				justify-content: center;
+				align-items: center;
+				display: flex;
+			}
+			
+			.modal{
+				width: 300px;
+				height: 200px;
+				background: orange;
+				border-radius: 5px;
+				padding: 10px;
+				box-shadow: -2px -2px 3px #bbb,2px 2px 3px #bbb;
+				opacity: 0;
+				transition: .5s ease-in-out;
+				transform: scale(0);
+			}
+			.modal p{
+				text-transform: capitalize;
+				padding: 10px;
+			}
+			.modal.modal_active{
+				transform: matrix(1.2, 0.2, -1, 0.9, 0, 20);
+				transform: scale(1);
+				opacity: 1;
+				transition: .5s;
+				animation-delay: .5s;
+			}
+			.btn{
+				border: none;
+				padding: 10px 30px;
+				font-size: 17px;
+				font-weight: 400;
+				text-transform: capitalize;
+				text-align: center;
+				color: #000;
+				background: orange;
+				box-shadow: -2px -2px 8px #bbb,2px 2px 8px #bbb;
+				border-radius: 10px;
+				position: relative;
+				left: 50%;
+				right: 50%;
+				top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<div class="modal">
+				<p>Lorem, ipsum dolor, sit amet consectetur adipisicing elit. Quidem, voluptas, a? Nostrum et, modi, soluta optio natus nesciunt veritatis consectetur praesentium porro, dolor, cum ab enim iusto placeat eos atque! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio quasi a optio provident illo dolorem...</p>
+			</div>
+			<button class="btn">Click me</button>
+		</section>
+		<script type="text/javascript">
+			var modal=document.querySelector(".modal");
+			var btn=document.querySelector(".btn");
+			btn.addEventListener("click",()=>{
+				modal.classList.toggle("modal_active");
+			})
+		</script>
+	</body>
+</html>
